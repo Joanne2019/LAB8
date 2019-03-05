@@ -6,5 +6,13 @@ $sql="SELECT * FROM marvelmovies WHERE productionStudio = 'Marvel Studios'";
 $result = $db->query($sql);
 
 if ($result->num_rows>0) {
-    while ($row = $result->)
+    while ($row = $result->fetch_assoc()) {
+        echo "year: " . $row["yearReleased"]. "; title: " . $row["title"]. "<br>";
+    }
 }
+else {
+    echo "0 results";
+}
+$db -> close();
+
+?>
